@@ -1,0 +1,208 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 16px;
+    background-color: lightgoldenrodyellow;
+}
+
+body {
+    margin: 0;
+}
+
+.top {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(207, 200, 195, 0.75);
+    border: none;
+    outline: none;
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+}
+
+.black {
+    color: black;
+}
+
+header {
+    border-bottom: 1px solid lightgray;
+    background-color: rgb(207, 200, 195);
+    margin-top: 0;
+    border: 0;
+    padding: 0;
+    position: relative;
+}
+
+.dropbtn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(207, 200, 195, 0.75);
+    border: none;
+    outline: none;
+    position: fixed;
+    top: 0%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    top: 50px;
+    z-index: 1;
+    background-color: seashell;
+    width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    list-style-type: none;
+}
+
+.dropdown-content a:hover {
+    background-color: lightgray;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-color: gray;
+    width: 100%;
+    text-align: center;
+}
+
+div{
+    margin: 5px;
+}
+
+hr {
+    color: gray
+}
+
+footer {
+    text-align: right;
+}
+
+/* Table Styling */
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background-color: rgb(207, 200, 195);
+}
+
+tr {
+    background-color: seashell;
+}
+
+td {
+    min-height: 25px;
+}
+
+.alt {
+    background-color: rgb(240, 225, 215);
+}
+
+/* Visual Representation */
+
+.container.just {
+    display: flex;
+    padding: 0;
+    width: 150px;
+    margin: 0;
+    border: 1px solid red;
+    height: 50px;
+}
+
+.container.align {
+    display: flex;
+    padding: 0;
+    height: 75px;
+    width: 100px;
+    margin: 0;
+    border: 1px solid red;
+}
+
+.box {
+    background-color: black;
+    border: 1px solid white;
+    padding: 0;
+    margin: 0;
+    min-height: 25px;
+    width: 25px;
+}
+
+.tall {
+    height: 50px;
+}
+
+.just {
+    align-items: center;
+}
+
+.just.flex-start {
+    justify-content: flex-start;
+}
+
+.just.flex-end {
+    justify-content: flex-end;
+}
+
+.just.center {
+    justify-content: center;
+}
+
+.just.space-around {
+    justify-content: space-around;
+}
+
+.just.space-between {
+    justify-content: space-between;
+}
+
+.align {
+    justify-content: center;
+}
+
+.align.flex-start {
+    align-items: flex-start;
+}
+
+.align.flex-end {
+    align-items: flex-end;
+}
+
+.align.center {
+    align-items: center;
+}
+
+.align.baseline {
+    align-items: baseline;
+}
+
+.align.stretch {
+    align-items: stretch;
+}

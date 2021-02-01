@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <script src="https://kit.fontawesome.com/e1ff4c8e2e.js" crossorigin="anonymous"></script>
+    <title>CSS Flexbox</title>
+</head>
+<body>
+
+    <header>
+        <h1>CSS Flexbox</h1>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-chevron-circle-down fa-2x"></i></button>
+            <nav class="dropdown-content">
+                <a href="#flexbox">What is Flexbox?</a>
+                <a href="#display-flex">display: flex</a>
+                <a href="#inline-flex">inline-flex</a>
+                <a href="#justify-content">justify-content</a>
+                <a href="#align-items">align-items</a>
+                <a href="#flex-growth-shrink">flex-grow/flex-shrink</a>
+                <a href="#flex-basis">flex-basis</a>
+                <a href="#flex">flex Property</a>
+                <a href="#flex-wrap">flex-wrap</a>
+                <a href="#align-content">align-content</a>
+                <a href="#flex-direction">flex-direction</a>
+                <a href="#flex-flow">flex-flow</a>
+            </nav>
+        </div>
+
+        
+        <button class="top"><a href="#top"><i class="fas fa-angle-double-up fa-2x black"></i></a></button>
+        
+    </header>
+
+    <main>
+
+        <div class="flexbox" id="flexbox">
+            <h3>What is Flexbox?</h3>
+            <p>Flexbox is a way to simplify the way we position elements on a page. It is not designed to be used on the entire page, but on sections. Flex box is useful for positioning items either individually, or grouped. It is also possible to nest flex containers and style them.</p>
+            <p>There are two important components: </p>
+            <ol>
+                <li>Flex Container</li>
+                <ul>
+                    <li>An element on the page which contains flex items.</li>
+                </ul>
+                <li>Flex items</li>
+                <ul>
+                    <li>All direct child elements of flex containers</li>
+                </ul>
+            </ol>
+        </div>
+
+        <hr>
+
+        <div class="display-flex" id="display-flex">
+            <h3><code>display: flex</code></h3>
+            <p>Any element can be a flex container. Using   <code>display: flex;</code> will turn the element into a flex container and will remain at block level. This will then change the behaviour of the child elements.</p>
+        </div>
+
+        <hr>
+
+        <div class="display-inline-flex" id="inline-flex">
+            <h3><code>display: inline-flex</code></h3>
+            <p>If you don't want your element as a block-level element, we can use <code>display: inline-flex;</code> to create a flex container that is inline</p>
+        </div>
+
+        <hr>
+
+        <div class="justify-content" id="justify-content">
+            <h3><code>justify-content</code></h3>
+            <p>We can use <code>justify-content</code> to position items from left to right. For example:</p>
+            <code>
+                .container {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            </code>
+            <p>This will cause all the flex items within the container to shift to the right side of the container. There are 5 values for the <code>justify-content</code> property:</p>
+
+            <table>
+                <thead>
+                    <th>Value</th>
+                    <th>Description</th>
+                    <th>Visual</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>flex-start</code></td>
+                        <td>Positions items in order from the left of the parent container, with no space between them.</td>
+                        <td class="container just flex-start">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>flex-end</code></td>
+                        <td>Positions items in order, with the last item starting on the right side of the parent container, with no extra space in between, or before</td>
+                        <td class="container just flex-end">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>center</code></td>
+                        <td>Positions items in the center of the parent container, with no extra space between, before, or after.</td>
+                        <td class="container just center">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>space-around</code></td>
+                        <td>Positions items with equal space before and after. This results in double space.</td>
+                        <td class="container just space-around">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>space-between</code></td>
+                        <td>Positions items with equal space between but no extra space before the first, or the last item.</td>
+                        <td class="container just space-between">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td>Note:</td>
+                        <td colspan="2">"<em>no extra space</em>" means the margins and borders will be respected but no more space will be added between.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <div class="align-items" id="align-items">
+            <h3><code>align-items</code></h3>
+            <p>Using the <code>align-items</code> property, we can position flex items vertically. There are 5 values for <code>align-items</code>:</p>
+
+            <table>
+                <thead>
+                    <th>Value</th>
+                    <th>Description</th>
+                    <th>Visual</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>flex-start</code></td>
+                        <td>Position items at the top of the parent container.</td>
+                        <td class="container align flex-start">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>flex-end</code></td>
+                        <td>Positions items at the bottom of the parent-container.</td>
+                        <td class="container align flex-end">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>center</code></td>
+                        <td>Positions items in the center of the parent container.</td>
+                        <td class="container align center">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>baseline</code></td>
+                        <td>Positions items with the bottom all aligned with each other, regardless of height.</td>
+                        <td class="container align baseline">
+                            <div class="box"></div>
+                            <div class="box tall"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>stretch</code></td>
+                        <td>If possible, items will stretch from top of the parent container to the bottom. This is the <strong>default</strong> value. Any element with a specified height will not be stretched.</td>
+                        <td class="container align stretch">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <div class="flex-grow flex-shrink" id="flex-grow-shrink">
+            <h3><code>flex-grow/flex-shrink</code></h3>
+            <p>Flex items will shrink proportionally when the flex container is too small. If the parent container is larger than necessary, then the flex items will not stretch by default.</p>
+            <p>This allows us to specify that items should grow or shrink to fill containers when they are resized.</p>
+        </div>
+
+        <hr>
+
+        <div class="flex-basis" id="flex-basis">
+            <h3><code>flex-basis</code></h3>
+            <p>This property allows us to specify the initial width of a flex-item before it shrinks or grows.</p>
+        </div>
+
+        <hr>
+
+        <div class="flex" id="flex">
+            <h3><code>flex</code> Property</h3>
+            <p>The <code>flex</code> property provides a convenient way to specify how an element stretches/shrinks. We are able to declare <code>flex-grow</code>/<code>flex-shrink</code>/<code>flex-basis</code> in one line.</p>
+            <p>If we only use 2 values in the <code>flex</code> property, it will only set the <code>flex-grow</code> and <code>flex-basis</code>.</p>
+        </div>
+
+        <hr>
+
+        <div class="flex-wrap" id="flex-wrap">
+            <h3><code>flex-wrap</code></h3>
+            <p>Sometimes, we don't want to shrink the items within the container, but instead would rather have it move onto a new line. There are 3 values we can use:</p>
+            <ol>
+                <li><code>wrap</code>: Child elements that don't fit will move down a row.</li>
+                <li><code>wrap-reverse</code>: Child elements that don't fit will move down a row, but in reverse order.</li>
+                <li><code>nowrap</code>: This is the <strong>default</strong> value, and prevents the elements wrapping.</li>
+            </ol>
+            <p>We declare <code>flex-wrap</code> in the flex container.</p>
+        </div>
+
+        <hr>
+
+        <div class="align-content" id="align-content">
+            <h3><code>align-content</code></h3>
+            <p>When we use <code>align-items</code> we are aligning the items from top to bottom. When we use <code>align-content</code> we are aligning the rows from top to bottom.</p>
+            <p>This uses 6 values:</p>
+            <ol>
+                <li><code>flex-start</code></li>
+                <li><code>flex-end</code></li>
+                <li><code>center</code></li>
+                <li><code>space-between</code></li>
+                <li><code>space-around</code></li>
+                <li><code>stretch</code></li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <div class="flex-direction" id="flex-direction">
+            <h3><code>flex-direction</code></h3>
+            <p>Using <code>flex-direction</code> it is possible to switch the main axis and the cross axis. This property accepts 4 values:</p>
+            <ol>
+                <li><code>row</code>: Flex items will be ordered horizontally.</li>
+                <li><code>row-reverse</code></li>
+                <li><code>column</code>: Flex items will be order vertically.</li>
+                <li><code>column-reverse</code></li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <div class="flex-flow" id="flex-flow">
+            <h3><code>flex-flow</code></h3>
+            <p>We use this property when we are declaring <code>flex-wrap</code> and <code>flex-direction</code> in one line.</p>
+        </div>
+    </main>
+
+    <footer>
+        <h6>&copy; Jamie Fleming 2021</h6>
+    </footer>
+</body>
+</html>
